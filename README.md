@@ -117,3 +117,16 @@
 - cat, 
   -- cat 그대로 출력해준다 (파이썬같음)
 8. git에 관하여 
+- init, add, rm, commit 에관하여
+  -- init => 깃을 생성해준다
+  -- git status => 상태를 알려준다
+  -- git diff => 변경사항을 알려준다.
+  -- git add => 수정된 사항을 적어준다
+  -- git commit -m "수정되었다" => 수정된 사항을 내용을 남겨 저장한다(전에거와 비교하여 저장한다)
+- log, checkout, branch, reset
+  -- git log 변경 저장된 메세지들을 보여준다 
+  -- git branch 작업위치를 보여준다
+  -- git branch -d 작업이름 => 작업이름을 삭제한다
+  -- git branch -b 작업이름 => 작업이름을 생성한다
+  -- git checkout 작업위치를 변경한다
+  -- git reset HEAD 작업이름 => 작업이름으로 돌아간다
