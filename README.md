@@ -47,38 +47,54 @@
   - file 및 dir 관리하기 (cd, mkdir, mv 등등)
   - 권한 설정 chmod
   - echo, cat, ls, touch
-  -- echo => 바로 출력
-  -- cat -e => 파일 보기
-  -- ls => 지금위치 목록보기
-  -- touch => 파일 생성
+    -- echo => 바로 출력
+    -- cat -e => 파일 보기
+    -- ls => 지금위치 목록보기
+    -- touch => 파일 생성
   - 시스템 명령어 설정 env et export
-    42>$truc=bidule
-    42>$echo truc => 이경우 echo 명령어의 그대로 출력이 된다
-    truc
-    42>$echo $truc => 이경우 시스템에 저장된 truc를 찾아 작성된다
-    bidule
-    - sh
-    42>$sh
-    sh-3.2$ echo $truc => 아무것도 나오지 않음
+      42>$truc=bidule
+      42>$echo truc => 이경우 echo 명령어의 그대로 출력이 된다
+      truc
+      42>$echo $truc => 이경우 시스템에 저장된 truc를 찾아 작성된다
+      bidule
+      - sh
+      42>$sh
+      sh-3.2$ echo $truc => 아무것도 나오지 않음
 
-    sh-3.2$ exit => 나가기
-    exit
-    - env
-    42>$env => 환경변수를 볼 수 있다
-    ...
-    내용
-    ...
-    42>$export truc => 환경변수에 추가 적용한다
-    42>$env
-    ...
-    내용
-    truc=bidule => 추가됨
-    ...
-    42>$sh
-    sh-3.2$ echo $truc => 아무것도 나오지 않음
-    bidule => sh에 나온다
+      sh-3.2$ exit => 나가기
+      exit
+      - env
+      42>$env => 환경변수를 볼 수 있다
+      ...
+      내용
+      ...
+      42>$export truc => 환경변수에 추가 적용한다
+      42>$env
+      ...
+      내용
+      truc=bidule => 추가됨
+      ...
+      42>$sh
+      sh-3.2$ echo $truc => 아무것도 나오지 않음
+      bidule => sh에 나온다
 - wc, echo
--- wc => 파일의 문자줄, 단어수, 크기 를 출력해준다  echo
--- echo => 기능이 많다 (*모두 자리수 상관없음, ?모두 자리수 상관있음)
-  42>$echo *.txt => 현제 위치의 모든 txt 파일을 찾아준다
-  42>$echo t???.txt => 첫글자가 t 
+  -- wc => 파일의 문자줄, 단어수, 크기 를 출력해준다  echo
+  -- echo => 기능이 많다 (*모두 자리수 상관없음, ?모두 자리수 상관있음)
+    42>$echo *.txt => 현제 위치의 모든 txt 파일을 찾아준다
+    42>$echo t???.txt => 첫글자가 t이면서 4글자인 txt파일
+    42>$echo \특수문자  => 이경우 특수문자를 출력한다 (같은것 '', 조금 다른것 "" 안에 $가있을경우 저장된 값을 찾는다)
+- cat과 more 차이 head, tail, grep
+  --cat => 파일을 전체적으로 보여준다
+  --more => /로 검색어를 입력해 찾을수 있다
+  -- head -n 2 파일.txt => 원하는 줄을 보여준다
+  -- head -c 9 파일.txt => 원하는 문자 수만큼를 보여준다
+  -- tail => head와 같고 뒤에서 부터 보여준다
+  -- cat -e 파일.txt => $가 추가되어 보여준다
+  -- grep simple(찾을내용) 파일.txt => 처음으로 줄을 찾아 보여준다
+  -- grep -v simple(찾을내용) 파일.txt => 모든 줄을 찾아 보여준다
+  -- grep -i Simple(찾을내용) 파일.txt => 대소문자를 무시하고 찾아준다
+- 명령어 같이 쓰는 방법 stdout, stderr, stdin
+  42>$ ls | grep txt => 검색에 맞는 리스트를 보여준다
+  42>$ ls > rex.txt => rex.txt 에 리스트의 목록을 저장한다
+  42>$ ls 찾을거 > res.txt => 결과 출력을 res.txt에 저장한다
+  ### 나중에 
