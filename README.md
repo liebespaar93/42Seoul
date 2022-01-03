@@ -93,8 +93,27 @@
   -- grep simple(찾을내용) 파일.txt => 처음으로 줄을 찾아 보여준다
   -- grep -v simple(찾을내용) 파일.txt => 모든 줄을 찾아 보여준다
   -- grep -i Simple(찾을내용) 파일.txt => 대소문자를 무시하고 찾아준다
-- 명령어 같이 쓰는 방법 stdout, stderr, stdin
+- 명령어 같이 쓰는 방법 stdout, stderr, stdin, 입출력 방식에 대한정보(>, 2>, >> 등)
   42>$ ls | grep txt => 검색에 맞는 리스트를 보여준다
   42>$ ls > rex.txt => rex.txt 에 리스트의 목록을 저장한다
   42>$ ls 찾을거 > res.txt => 결과 출력을 res.txt에 저장한다
-  ### 나중에 
+  ### 나중에 "2>에관한 입출력 방식에대한 정보"https://cloud-oky.tistory.com/43
+  42>$ cat batman.txt | grep 찾을내용 | wc -l => 파일의 줄의 갯수를 찾아준다
+  42>$ cat << FIN (출력시작문자)
+  > 입력할 내용
+  > 내용2
+  > FIN (끝네기 처음시작한 문자를 입력해준다)
+  입력할 내용
+  내용2
+- find, wc, bc 에 관하여
+  -- find => 찾는 파일을 찾아준다
+  -- find . -name 찾을 파일 => 현재 위치에서 찾아준다 
+  -- find . -type d => 폴더를 찾아준다
+  -- find . -maxdepth 숫자 => 깊이를 지정하여 찾아준다
+  -- wc -l 파일.txt => 줄 갯수를 알려준다
+  -- wc -w 파일.txt => 단어의 갯수를 알려준다
+  -- wc -c 파일.txt => 문자의 갯수를 알려준다
+  -- bc => 수학적 계산을 할수 있다 (파이썬 같이 실행된다)
+- cat, 
+  -- cat 그대로 출력해준다 (파이썬같음)
+8. git에 관하여 
