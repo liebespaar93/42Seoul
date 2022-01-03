@@ -37,4 +37,45 @@
   - 나(경근), 정은, 수진, 현진 과 함께 같이 하게 되었다
 
   7. 프로젝트 예시 동영상 보기 (https://www.youtube.com/watch?v=eTt5NQUO3LY&list=PLVQYiy6xNUxxhvwi0PGmXb5isUdVwmsg8&index=1)
-  - 
+  * 42 방법
+  - 프로젝트 선택 방법
+  - 프로젝트 평가 시간 설정
+  - 동료평가 설정
+  - 동료평가 하기
+  * shell 방법
+  - man 커멘드
+  - file 및 dir 관리하기 (cd, mkdir, mv 등등)
+  - 권한 설정 chmod
+  - echo, cat, ls, touch
+  -- echo => 바로 출력
+  -- cat -e => 파일 보기
+  -- ls => 지금위치 목록보기
+  -- touch => 파일 생성
+  - 시스템 명령어 설정 env et export
+    42>$truc=bidule
+    42>$echo truc => 이경우 echo 명령어의 그대로 출력이 된다
+    truc
+    42>$echo $truc => 이경우 시스템에 저장된 truc를 찾아 작성된다
+    bidule
+    - sh
+    42>$sh
+    sh-3.2$ echo $truc => 아무것도 나오지 않음
+
+    sh-3.2$ exit => 나가기
+    exit
+    - env
+    42>$env => 환경변수를 볼 수 있다
+    ...
+    내용
+    ...
+    42>$export truc => 환경변수에 추가 적용한다
+    42>$env
+    ...
+    내용
+    truc=bidule => 추가됨
+    ...
+    42>$sh
+    sh-3.2$ echo $truc => 아무것도 나오지 않음
+    bidule => sh에 나온다
+- wc => 파일의 
+-바이트 문자의
