@@ -127,6 +127,15 @@
   -- git log 변경 저장된 메세지들을 보여준다 
   -- git branch 작업위치를 보여준다
   -- git branch -d 작업이름 => 작업이름을 삭제한다
-  -- git branch -b 작업이름 => 작업이름을 생성한다
+  -- git branch 작업이름 => 작업이름을 생성한다
   -- git checkout 작업위치를 변경한다
   -- git reset HEAD 작업이름 => 작업이름으로 돌아간다
+- rebase, merge
+  -- rebase => log를 어느 위치로 돌려준다
+  -- git rebases master => 마스터의 위치로 log를 설정한다
+  -- git rebase --continue
+  -- git commit --amend => 방금전 깃을 불러온다
+  -- git commit --amend -m "변경할 내용" => 방금전 commit 내용을 수정한다
+  -- git merge 작업이름 => 작업 합치기
+- git stash => 작업 수정사항을 임시 저장하고 무시하며 수정사항을 무시하고 merge 한다
+### 나중에 다시 
