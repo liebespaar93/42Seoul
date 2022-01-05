@@ -139,3 +139,6 @@
   -- git merge 작업이름 => 작업 합치기
 - git stash => 작업 수정사항을 임시 저장하고 무시하며 수정사항을 무시하고 merge 한다
 ### 나중에 다시 
+
+echo 
+https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
