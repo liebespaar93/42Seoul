@@ -109,11 +109,79 @@ ex07
 ########################
 
 #!/bin/bash
-test=`cat /etc/passwd |grep -v '^#' | cut -d ':' -f 1 | rev | sort -r | awk 1 ORS=', '`
-length=${$test}
-echo -n  ${test:0:1}.
+test=`cat /etc/passwd |grep -v '^#' | cut -d ':' -f 1 | awk "NR>=2" | rev | sort -r | head -10 | awk 1 ORS=', '` 
+
+for x in $testdata
+do
+	[[ $FT_LINE1 < ${#x} ]] && [[ ${#x} < $FT_LINE2 ]]  &&  test=$test$x", "
+done
+
+length=${#test}
+endindex=$(($length -2))
+echo -n  ${test:0:endindex}.
 
 
 ## 쉘메계변수
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+
+틀린 코드 찾기 
+
+
+
+ex08
+
+
+
+########################
+### 파일명 : test.sh
+### 실행 환경 : bash
+########################
+
+#!/bin/bash
+
+IN_FT_NBR1="$1"
+IN_FT_NBR2="$2"
+
+ARR_NBR1=(
+	"'"
+	"\\"
+	"\""
+	"?"
+	"!"
+)
+ARR_NBR2=(
+	"m"
+	"r"
+	"d"
+	"o"
+	"c"
+)
+
+NU_NBR1=""
+NU_NBR2=""
+for word1 in `grep -o . <<< "te???s!!t12\\o\\i\"\'\' " `
+do
+	for i in "${!ARR_NBR1[@]}"
+	do
+		[[ "${ARR_NBR1[$i]}" = "$word1" ]] && NU_NBR1=$NU_NBR1$i && break
+	done
+done
+echo $NU_NBR1
+
+for word2 in `grep -o . <<< "sjsdoekcas"`
+do
+	for k in "${!ARR_NBR2[@]}"
+	do
+		[[ "${ARR_NBR2[$k]}" = "$word2" ]] && NU_NBR2=$NU_NBR2$k && break
+	done
+done
+echo $NU_NBR2
+
+ADD_NBR1=`echo "obase=10; ibase=5; $NU_NBR1" | bc`
+ADD_NBR2=`echo "obase=10; ibase=5; $NU_NBR2" | bc`
+ADD_NBR=$(($ADD_NBR1 + $ADD_NBR2))
+
+echo -e "NBR1: $ADD_NBR1 \nNBR2: $ADD_NBR2 \n"$ADD_NBR
+
+
 
