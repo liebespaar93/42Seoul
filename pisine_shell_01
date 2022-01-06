@@ -179,7 +179,7 @@ echo $NU_NBR2
 
 ADD_NBR1=`echo "obase=10; ibase=5; $NU_NBR1" | bc`
 ADD_NBR2=`echo "obase=10; ibase=5; $NU_NBR2" | bc`
-ADD_NBR=$(($ADD_NBR1 + $ADD_NBR2))
+ADD_NBR=$(bc <<< "$ADD_NBR1 + $ADD_NBR2")
 
 echo -e "NBR1: $ADD_NBR1 \nNBR2: $ADD_NBR2 \n"$ADD_NBR
 
